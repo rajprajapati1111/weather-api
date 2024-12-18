@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather api</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="card">
+            <div class="top-box">
+                <div class="searchbar">
+                    <input type="text" placeholder="Search City" id="searchbar">
+                    <button id="search" onclick=" searchbar() "><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <h1>Amreli</h1>
+                <img src="./cloudy.png" class="image">
+            </div>
+            <div class="bottom-box">
+                <div class="left">
+                    <img src="./sun.png" alt="">
+                    <h1>temp : &#176 C</h1>
+                </div>
+                <div class="right">
+                    <img src="./wind.png" alt="">
+                    <h1>Wind :  Kph</h1>
+                </div>
+            </div>
+            <p>Real-Time  World Weather Data Api</p>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+
+            async function searchbar(){
+           
+                try {
+                    let api = '094b1cddc40a67c426c17b4f56de2b4d';
+
+                    let search = document.getElementById('searchbar').value;
+                    // console.log(search);
+
+                    let result = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${api}&units=metric`);
+
+                    let res = await result.json()
+
+                    // console.log(res);
+
+                    let container = document.querySelector('.container');
+                    let bottombox = document.querySelector('.bottom-box');
+                    let left = document.querySelector('.left');
+
+                    
+                    container.innerHTML =`<div id="card">
+            <div class="top-box">
+                <div class="searchbar">
+                    <input type="text" placeholder="Search City" id="searchbar">
+                    <button id="search" onclick=" searchbar() "><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                </div>
+                <h1>${res.name}</h1>
+                <img src="./cloudy.png" class="image">
+            </div>
+            <div class="bottom-box">
+                <div class="left">
+                    <img src="./sun.png" alt="">
+                    <h1>temp :${res.main.temp} &#176 C</h1>
+                </div>
+                <div class="right">
+                    <img src="./wind.png" alt="">
+                    <h1>Wind : ${res.wind.deg} kph</h1>
+                </div>
+            </div>
+            <p class="p">Real-Time  World Weather Data Api</p>
+        </div>`
+
+                } catch (err) {
+                    console.log(err);
+
+                }
+
+            }
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

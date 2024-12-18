@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: url(https://www.shutterstock.com/image-vector/blue-mountain-illustration-landscape-vector-260nw-2472577413.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card{
+    width: 600px;
+    height: 350px;
+    /* border: 1px solid black; */
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0px -2px 17px 2px #fffefe;
+    border-radius: 20px;
+    background: linear-gradient(#8ba2e2,#c3e5e5);
+    padding: 20px;
+}
+.searchbar{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.top-box > h1{
+    margin-top: 65px;
+}
+
+.top-box{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    height: 115px;
+}
+
+.image{
+    transform: translateX(70px) translateY(-50px);
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(0 0 10px white);
+}
+
+input{
+    width: 80%;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    font-family: serif;
+    background-color: #fff3f3d1;
+    outline: none;
+    letter-spacing: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff3f3d1;
+    font-size: 18px;
+}
+
+.bottom-box{
+    width: 100%;
+    height: 180px;
+    /* border:  1px solid black; */
+    display: flex;
+}
+
+.left{
+    width: 50%;
+    height: 170px;
+    /* border:  1px solid black; */
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.left > img{
+    width: 100px;
+    height: 100px;
+}
+
+.right{
+    width: 50%;
+    height: 170px;
+    /* border:  1px solid black; */
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.right > img{
+    width: 100px;
+    height: 100px;
+}
+
+ h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(253, 254, 254);
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    color: #558e8a;
+    font-size: 1.5rem;
+    margin-left: 90px; 
+}
+
